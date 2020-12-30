@@ -1,6 +1,6 @@
 # Oshop
 
-It is a website to shop organic products. It is developed using Angular 10, Bootstrap 4 with Java Spring Boot and MySql in the back end.
+It is a website to shop organic products. It is developed using Angular 10(TypeScript), Bootstrap 4 with Java Spring Boot and MySql in the back end.
 
 ## Development server
 

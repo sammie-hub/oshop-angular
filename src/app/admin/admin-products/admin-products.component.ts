@@ -1,4 +1,6 @@
+import { ProductService } from './../../../../src/app/product.service';
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-admin-products',
@@ -7,7 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminProductsComponent implements OnInit {
 
-  constructor() { }
+  products$;
+  constructor(private productService: ProductService) { 
+   // this.products$ = this.productService.getAll();
+
+    this.productService.getAll().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ key: c.payload.key, ...c.payload.val() })
+        )
+      )
+    ).subscribe(data => {
+      this.products$ = data;
+      console.log(this.products$);
+    });
+  }
 
   ngOnInit(): void {
   }

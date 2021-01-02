@@ -1,5 +1,6 @@
+import { Observable } from 'rxjs-compat';
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 
 @Injectable({
   providedIn: 'root'
@@ -12,5 +13,14 @@ export class ProductService {
   create(product)
   {
     return this.db.list('/products').push(product);
+  }
+
+  getAll(): AngularFireList<any>{
+    return this.db.list('/products');
+  }
+  
+  getProductById(productId): Observable<any>
+  {
+    return this.db.object('/products/' + productId).valueChanges();
   }
 }

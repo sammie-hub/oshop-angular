@@ -14,6 +14,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomFormsModule } from 'ng2-validation';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,6 +49,7 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
   imports: [
     FormsModule,
     BrowserModule,
+    HttpClientModule,
     CustomFormsModule,
     AppRoutingModule,
     AngularFirestoreModule,

@@ -27,9 +27,10 @@
             </div>
             <div class="form-group">
                 <label for="category">Category</label>
-                <select #category="ngModel" [(ngModel)]="product.category" name="category" id="category" class="form-control" required>
+                <select #category="ngModel" [ngModel]="product.category?.id" (ngModelChange)="product.category?.id ? product.category.id=$event : null"
+                name="category" id="category" class="form-control" required>
                 <option value=""></option>
-                <option *ngFor="let c of categories$" [value]="c.key">
+                <option *ngFor="let c of categories$ ; let i = index" [value]="c.id">
                     {{ c.name }}
                 </option>
                 </select>

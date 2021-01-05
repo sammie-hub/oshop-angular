@@ -16,5 +16,5 @@ For testing purpose it is deployed in Firebase Hosting and uses Firebase Realtim
 -  Product Management.
 - Develop Check-out
 - Develop Shopping Cart
-- Implete Spring Security and remove dependency of Firebase.
+- Implement Spring Security and remove dependency of Firebase.
 - Setup MongoDB as the backend DB.

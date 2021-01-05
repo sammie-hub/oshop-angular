@@ -11,9 +11,10 @@ For testing purpose it is deployed in Firebase Hosting and uses Firebase Realtim
 
 
 # To-Do List
+* Exception Handling in Spring Boot Apis
 - Develop Product Catalog.
 -  Product Management.
 - Develop Check-out
 - Develop Shopping Cart
-- Develop REST Apis in JAVA Spring Boot and remove dependency of Firebase.
+- Implete Spring Security and remove dependency of Firebase.
 - Setup MongoDB as the backend DB.

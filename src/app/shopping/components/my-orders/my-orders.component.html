@@ -1,0 +1,49 @@
+<table class="table" *ngIf="orders">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date Placed</th>
+            <th>Bill Amount</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let p of orders; let i = index;">
+        <tr  (click) = onClick(i) >
+            <td>{{ p.shippingDetails.name }}</td>
+            <td>{{ p.datePlaced }}</td>
+            <td>
+               {{ p.totalOrderPrice }}
+            </td>
+        </tr>
+        <tr>
+            <td *ngIf ="isExpanded == i" colspan="3">
+                <div >
+                    <table class="table">
+                        <thead>
+                            <tr >
+                                <th>Title</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>TotalPrice</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr *ngFor="let order of p.oProducts">
+                                <td>{{order.title}}</td>
+                                <td>{{ order.quantity }}</td>
+                                <td> {{ order.price }} </td>
+                                <td> {{ order.totalPrice }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Address: {{p.shippingDetails.name}} {{ p.shippingDetails.adrressLine1 }},
+                        {{ p.shippingDetails.adrressLine2 }}, {{ p.shippingDetails.city }}
+                    </p>
+
+                </div>
+            </td>
+        </tr>
+    </tbody>
+
+</table>

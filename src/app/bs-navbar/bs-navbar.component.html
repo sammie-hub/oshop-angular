@@ -7,26 +7,33 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/shopping-cart">Shopping Cart</a>
+          <a class="nav-link" routerLink="/shopping-cart">
+            Shopping Cart
+            <span class="badge badge-warning badge-pill" >{{totalCount}} </span>
+          </a>
         </li>
         <ng-template #anonymousUser> 
           <li class="nav-item">
             <a class="nav-link" routerLink="/login">Login</a>
           </li>
         </ng-template>
-       
-        <li ngbDropdown *ngIf="auth.user$ | async as user; else anonymousUser" class="nav-item dropdown">
-          <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{ user.displayName }}
+        
+        <li ngbDropdown *ngIf="hasSignedIn(); else anonymousUser" class="nav-item dropdown">
+          <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ username() }}
           </a>
           <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" routerLink="my/orders">My Orders</a>
-            <a class="dropdown-item" routerLink="admin/orders">Manage Orders</a>
-            <a class="dropdown-item" routerLink="admin/products">Manage Products</a>
+            <a *ngIf = "authourity == 'ADMIN'" class="dropdown-item" routerLink="admin/orders">Manage Orders</a>
+            <a *ngIf = "authourity == 'ADMIN'" class="dropdown-item" routerLink="admin/products">Manage Products</a>
+            <div class="dropdown-divider"></div>
+            <a  class="dropdown-item" routerLink="/change-password">Change Password</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" (click)="logout()">Log Out</a>
           </div>
         </li>
+        
       </ul>
     </div>
   </nav>

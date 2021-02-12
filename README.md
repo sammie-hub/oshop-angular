@@ -1,19 +1,22 @@
 # Oshop
-* It is under development. Please continute checking the repository for progress on this project.
+* The development is almost completed, however, there are several functionalities which can be added to the beta version. I've planned to deploy the new version with functionalties mentioned in my "To-Do List".
 
 It is a website to shop organic products. It is developed using Angular 10(TypeScript), Bootstrap 4 with Java Spring Boot and MySql in the back end.
 
 ## Development server
 
-For testing purpose it is deployed in Firebase Hosting and uses Firebase Realtime Database. Please click on below link to view the site.
+It is deployed on AWS Elastic Bean service using RDS. Please click on link below to view the site.
 
- `https://oshop-c9313.web.app/index.html`.
+ `http://organic-shop.s3-website-us-east-1.amazonaws.com/`.
 
+There are two types accounts present :
+```
+Admin - U - admin@gmail.com, P - admin123
+User - U - user@gmail.com, P - user123
+```
 
 # To-Do List
-- Develop Product Catalog.
--  Product Management.
-- Develop Check-out
-- Develop Shopping Cart
-- Develop REST Apis in JAVA Spring Boot and remove dependency of Firebase.
-- Setup MongoDB as the backend DB.
+* MyProfile page for user.
+- Functionality to approve and reject the order by admin.
+- Order and registration confirmation email to users and admin.(Currently, working on it).
+- Forgot Password (Currently, working on it).

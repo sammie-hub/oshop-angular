@@ -1,0 +1,19 @@
+<!-- <button class="btn btn-primary" (click)="login()">Login with Google</button> -->
+<form #f="ngForm" (ngSubmit)="login(f.value)">
+    <div *ngIf="result" class="alert alert-danger" role="alert">
+        {{ result }}
+      </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" name="email" [(ngModel)]="user.email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" name="password" [(ngModel)]="user.password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="d-flex">
+        <button type="submit" class="btn btn-primary mr-3">Submit</button>
+        <button type="submit" class="btn btn-primary" routerLink="/register">Register</button>
+    </div>
+    
+</form>

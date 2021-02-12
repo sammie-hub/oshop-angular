@@ -1,0 +1,52 @@
+<form #f="ngForm" (ngSubmit)="register(f.value, f)">
+
+  <div *ngIf="result$ == -1" class="alert alert-danger" role="alert">
+    Email-Id already exists!!
+  </div>
+  <div *ngIf="result$ == -2" class="alert alert-danger" role="alert">
+    Fields are manipulated.
+  </div>
+  <div *ngIf="result$ > 0" class="alert alert-success" role="alert">
+    Registeration Successful. Click <a routerLink="/login">here</a> to login.
+  </div>
+  <div class="form-group">
+    <label for="fname">First Name</label>
+    <input #fname="ngModel" type="text" name="fname" [(ngModel)]="user.fname" class="form-control" id="fname" placeholder="First Name"
+    required minlength="1">
+    <div class="alert alert-danger" *ngIf="fname.touched && fname.invalid">
+      <div *ngIf="fname.errors.required"> Field is required. </div>
+      <div *ngIf="fname.errors.minlength"> First Name should be of atleast 2 letters. </div>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <label for="lname">Last Name</label>
+    <input #lname = "ngModel" type="text" name="lname" [(ngModel)]="user.lname" class="form-control" id="lname" placeholder="Last Name"
+    required minlength="1">
+    <div class="alert alert-danger" *ngIf="lname.touched && lname.invalid">
+      <div *ngIf="lname.errors.required"> Field is required. </div>
+      <div *ngIf="lname.errors.minlength"> Last Name should be of atleast 2 letters. </div>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <label for="">Email address</label>
+    <input #email="ngModel" type="email" name="email" [(ngModel)]="user.email" class="form-control" id="email" placeholder="Enter email"
+    required email>
+    <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+      <div *ngIf="email.errors.required"> Email is required. </div>
+      <div *ngIf="email.errors.email"> Email format is not accepted. </div>
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="Password1">Password</label>
+    <input #password="ngModel" type="password" name="password" [(ngModel)]="user.password" class="form-control" id="Password1"
+      placeholder="Password"
+      required minlength="8" >
+      <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+        <div *ngIf="password.errors.required"> Password is required. </div>
+        <div *ngIf="password.errors.minlength"> Password should be minimum of 8 digits. </div>
+    </div>
+  </div>
+  <button [disabled]="!f.valid" type="submit" class="btn btn-primary">Submit</button>
+</form>

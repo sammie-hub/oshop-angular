@@ -16,17 +16,9 @@ User - U - user@gmail.com, P - user123
 ```
 
 # To-Do List
-<<<<<<< HEAD
+
 * MyProfile page for user.
 - Functionality to approve and reject the order by admin.
 - Order and registration confirmation email to users and admin.(Currently, working on it).
 - Forgot Password (Currently, working on it).
-=======
-* Exception Handling in Spring Boot Apis
-- Develop Product Catalog.
--  Product Management.
-- Develop Check-out
-- Develop Shopping Cart
-- Implement Spring Security and remove dependency of Firebase.
-- Setup MongoDB as the backend DB.
->>>>>>> 64f5f81a9993fa708a2213a243f2ca8b509c2091
+

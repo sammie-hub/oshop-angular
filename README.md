@@ -3,7 +3,7 @@
 
 It is a website to shop organic products. It is developed using Angular 10(TypeScript), Bootstrap 4 with Java Spring Boot and MySql in the back end.
 
-# Backend is developed in Sping Boot. Make sure to explore my repo https://github.com/sammie-hub/oshopApi
+## Backend is developed in Sping Boot. Make sure to explore my repo https://github.com/sammie-hub/oshopApi
 
 ## Development server
 
@@ -17,7 +17,7 @@ Admin - U - admin@gmail.com, P - admin123
 User - U - user@gmail.com, P - user123
 ```
 
-# To-Do List
+## To-Do List
 
 * MyProfile page for user.
 - Functionality to approve and reject the order by admin.

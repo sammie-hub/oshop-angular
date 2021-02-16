@@ -7,7 +7,7 @@ It is a website to shop organic products. It is developed using Angular 10(TypeS
 
 It is deployed on AWS Elastic Bean service using RDS. Please click on link below to view the site.
 
- http://organic-shop.s3-website-us-east-1.amazonaws.com/
+ https://organic-shoppers.com/
 
 There are two types accounts present :
 ```
